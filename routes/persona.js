@@ -43,11 +43,26 @@ const deletePersona = (request, response) => {
     );
 };
 
+const putPersona = (request, response) => {
+    const id = request.params.id;
+    const {apellido, nombre, edad} = request.body;
+    conn.query("UPDATE persona SET apellido = ?, nombre = ?, edad = ? WHERE persona_id = ?",
+        [apellido, nombre, edad, id],
+        (error, results) => {
+            if (error) {
+                throw error;
+            }
+            response.status(202).json({"Actualizado: ": results.affectedRows});
+        }
+
+    );
+
+};
 
 
 router.get("/persona", getPersonas);
 router.post("/persona", postPersonas);
 router.delete("/persona/:id", deletePersona);
-
+router.put("/persona/:id", putPersona);
 
 module.exports = router;
