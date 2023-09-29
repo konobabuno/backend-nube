@@ -6,8 +6,6 @@ const expect = chai.expect;
 
  chai.use(chaiHTTP);
 
- 
-
 describe("Unit test Pesona module", () => {
     describe("GET /persona", () => {
         it("Should return a lista of Personas", (done) => {
