@@ -38,7 +38,7 @@ const deletePersona = (request, response) => {
             if (error) {
                 throw error;
             }
-            response.status(202).json({"Eliminado: ": results.affectedRows});
+            response.status(202).json({"Delete": results.affectedRows});
         }
     );
 };
@@ -52,7 +52,7 @@ const putPersona = (request, response) => {
             if (error) {
                 throw error;
             }
-            response.status(202).json({"Actualizado: ": results.affectedRows});
+            response.status(202).json({"Update": results.affectedRows});
         }
 
     );
