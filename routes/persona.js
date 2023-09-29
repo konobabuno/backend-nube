@@ -24,7 +24,7 @@ const postPersonas = (request, response) => {
         (error, results) => {
             if(error)
                 throw error;
-            response.status(201).json({"Añadio: ": results.affectedRows});
+            response.status(201).json({"Added": results.affectedRows});
         }
     );
 };
