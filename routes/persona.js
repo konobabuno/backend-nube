@@ -43,7 +43,7 @@ const deletePersona = (request, response) => {
     );
 };
 
-const putPersona = (request, response) => {
+const updatePersona = (request, response) => {
     const id = request.params.id;
     const {apellido, nombre, edad} = request.body;
     conn.query("UPDATE persona SET apellido = ?, nombre = ?, edad = ? WHERE persona_id = ?",
@@ -63,6 +63,6 @@ const putPersona = (request, response) => {
 router.get("/persona", getPersonas);
 router.post("/persona", postPersonas);
 router.delete("/persona/:id", deletePersona);
-router.put("/persona/:id", putPersona);
+router.put("/persona/:id", updatePersona);
 
 module.exports = router;
